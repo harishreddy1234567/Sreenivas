@@ -1,0 +1,578 @@
+/* ========== CSS Reset & Base Variables ========== */
+:root {
+    --primary-bg: #1F1F1F;
+    --accent-gold: #D4A017;
+    --secondary-bg: #FAFAFA;
+    --highlight-red: #A61B1B;
+
+    --text-light: #FAFAFA;
+    --text-dark: #1F1F1F;
+    --text-muted: #B3B3B3;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--secondary-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.accent {
+    color: var(--accent-gold);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Wrapper for uniform section padding */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+/* ========== Navigation ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(31, 31, 31, 0.95);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.accent-dot {
+    color: var(--highlight-red);
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-gold);
+}
+
+/* ========== Buttons ========== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: var(--primary-bg);
+}
+
+.btn-primary:hover {
+    background: #E8B931;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+}
+
+.btn-secondary:hover {
+    background: var(--text-light);
+    color: var(--primary-bg);
+}
+
+.btn-massive {
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+}
+
+.btn-text {
+    background: none;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+    height: 100vh;
+    background: url('hero-biryani.png') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(31, 31, 31, 0.7), rgba(31, 31, 31, 0.9));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--text-light);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    animation: fadeUp 1s ease;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease 0.4s both;
+}
+
+/* ========== About Section ========== */
+.about {
+    background: var(--secondary-bg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.about-features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(212, 160, 23, 0.1);
+    color: var(--accent-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.rounded-img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.shadow {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Menu Section ========== */
+.menu {
+    background: var(--primary-bg);
+    color: var(--text-light);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.menu-card {
+    background: #2A2A2A;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 1.5rem;
+}
+
+.menu-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+/* ========== Features Section ========== */
+.features {
+    background: var(--secondary-bg);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* ========== Prominent CTA Banner ========== */
+.cta-banner {
+    background: var(--highlight-red);
+    color: var(--text-light);
+    padding: 5rem 2rem;
+}
+
+.cta-banner h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.cta-banner p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* ========== Reviews ========== */
+.reviews {
+    background: var(--primary-bg);
+    color: var(--text-light);
+}
+
+.reviews-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.review-card {
+    background: #2A2A2A;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.stars {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.review-card p {
+    font-style: italic;
+    color: #CCC;
+    margin-bottom: 1rem;
+}
+
+.author {
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+/* ========== Location Section ========== */
+.location {
+    background: var(--secondary-bg);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.address-box p,
+.address-box .hours {
+    margin: 1.5rem 0;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Footer ========== */
+footer {
+    background: #111;
+    color: var(--text-light);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-brand h2 {
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+}
+
+.footer-links a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover {
+    color: var(--text-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding: 1.5rem;
+    color: var(--text-muted);
+}
+
+/* ========== Floating Elements ========== */
+.floating-ctas {
+    position: fixed;
+    right: 2rem;
+    bottom: 5rem;
+    z-index: 999;
+}
+
+.floating-btn {
+    background: #25D366;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.floating-btn:hover {
+    background: #1ebe57;
+    transform: scale(1.05);
+}
+
+/* Mobile Bottom CTA */
+.mobile-bottom-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-bg);
+    z-index: 1000;
+}
+
+.m-btn {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    border-right: 1px solid #333;
+}
+
+.m-btn:last-child {
+    border-right: none;
+}
+
+.m-order {
+    background: var(--highlight-red);
+}
+
+.m-dir {
+    background: #2A2A2A;
+    color: var(--accent-gold);
+}
+
+.m-call {
+    background: #2A2A2A;
+}
+
+/* ========== Animations ========== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+
+    .about-grid,
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Simplified for now */
+}
+
+@media (max-width: 600px) {
+    .floating-ctas {
+        display: none;
+    }
+
+    .mobile-bottom-cta {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 4rem;
+    }
+
+    /* Space for mobile CTA */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+}
